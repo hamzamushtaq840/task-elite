@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.oval-header--mask {
+  background-repeat: no-repeat;
+  height: 616px;
+  width: 100%;
+  clip-path: ellipse(80% 60% at 50% 40%);
+  background-image: url('./assets/main/heroImage.png');
+  background-size: cover;
+  position: relative;
+}
+
+.oval-header--mask::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity by modifying the last value */
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 616px;
+  /* Here, rgba(0, 0, 0, 0.5) creates a black overlay with 50% opacity */
+  clip-path: ellipse(80% 80% at 50% 50%);
+}
